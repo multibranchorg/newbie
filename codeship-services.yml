@@ -1,0 +1,14 @@
+project_name:
+  build:
+    image: organisation_name/project_name
+    dockerfile: Dockerfile
+  links:
+    - redis
+    - postgres
+  environment:
+    - DATABASE_URL=postgres://postgres@postgres/YOUR_DATABASE_NAME
+    - REDIS_URL=redis://redis
+redis:
+  image: redis:3
+postgres:
+  image: postgres:9.6
